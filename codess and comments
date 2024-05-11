@@ -1,0 +1,17 @@
+// to show the data in center of the app
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main); // Assuming "activity_main" is your layout XML file
+
+    // Set the title and align it to the center
+    setTitle("Your Activity Title");
+    View titleView = getWindow().findViewById(android.R.id.title);
+    if (titleView != null) {
+        ViewGroup.LayoutParams params = titleView.getLayoutParams();
+        if (params instanceof FrameLayout.LayoutParams) {
+            ((FrameLayout.LayoutParams) params).gravity = Gravity.CENTER;
+            titleView.setLayoutParams(params);
+        }
+    }
+}
